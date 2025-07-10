@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>平面方程可视化</title>
+    <title>三维平面方程可视化</title>
     <style>
         body {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
+            padding: 20px;
             background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
             font-family: Arial, sans-serif;
             color: white;
@@ -20,31 +21,88 @@
             padding: 20px;
             border-radius: 10px;
             max-width: 800px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        .videos-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
         }
         video {
             width: 100%;
             border-radius: 8px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
         }
         h1 {
             margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #ffcc00;
         }
         p {
-            margin-top: 5px;
+            margin: 10px 0;
             font-size: 18px;
+        }
+        .equation {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #ffcc00;
+            margin: 15px 0;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #ccc;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>三维平面方程可视化</h1>
-        <p>x + 2y + z = 2</p>
-        <p>2x + 4y + 2z = 4</p>
-        <video controls autoplay muted>
-            <source src="Figure1.6.3.mp4" type="video/mp4">
-            您的浏览器不支持视频标签。
-        </video>
-        <p>使用 Manim 数学动画引擎创建</p>
+    <h1>三维平面方程可视化</h1>
+    
+    <div class="videos-container">
+        <!-- 第一个视频 -->
+        <div class="container">
+            <h2>单个平面方程</h2>
+            <p class="equation">x + 2y + z = 2</p>
+            <video controls autoplay muted>
+                <source src="plane1.mp4" type="video/mp4">
+                您的浏览器不支持视频标签。
+            </video>
+            <p>展示单个三维平面方程的几何表示</p>
+        </div>
+        
+        <!-- 第二个视频 -->
+        <div class="container">
+            <h2>两个平面相交</h2>
+            <p class="equation">平面1: x + 2y + z = 2</p>
+            <p class="equation">平面2: x - z = 0</p>
+            <p class="equation">交线: x = t, y = 1 - t, z = t</p>
+            <video controls autoplay muted>
+                <source src="plane2.mp4" type="video/mp4">
+                您的浏览器不支持视频标签。
+            </video>
+            <p>展示两个平面相交形成一条直线</p>
+        </div>
+        
+        <!-- 第三个视频 -->
+        <div class="container">
+            <h2>平行平面</h2>
+            <p class="equation">平面1: x + 2y + z = 2</p>
+            <p class="equation">平面2: 2x + 4y + 2z = 4</p>
+            <video controls autoplay muted>
+                <source src="plane3.mp4" type="video/mp4">
+                您的浏览器不支持视频标签。
+            </video>
+            <p>展示两个平行平面的几何关系</p>
+        </div>
     </div>
+    
+    <p class="footer">使用 Manim 数学动画引擎创建 | GitHub Repository</p>
 </body>
 </html>
